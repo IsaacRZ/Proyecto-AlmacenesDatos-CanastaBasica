@@ -125,8 +125,13 @@ canasta-basica-cr/
 │   ├── raw/           # Archivos originales INEC (.sav) — no modificar
 │   ├── processed/     # Parquets limpios post-ETL
 │   └── warehouse/     # Tablas DW + modelos + predicciones
-├── notebooks/
-│   └── 01_exploracion.ipynb
+├── etl/
+│   ├── 01_eda.ipynb   # Exploratory data analysis
+│   └── 01tel.ipynb    # Consolidación ENAHO
+├── ml/                # Modelos (Prophet, XGBoost+SHAP)
+├── database/          # Scripts SQL
+├── dashboard/         # Visualizaciones
+├── docs/              # Documentación
 ├── requirements.txt
 └── README.md
 ```
