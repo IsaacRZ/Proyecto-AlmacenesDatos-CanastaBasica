@@ -1,2 +1,8 @@
-data/
-CLAUDE.md
+# Ignorar todo el contenido de la carpeta data
+data/**/*
+data/raw/
+*.sav
+*.zip
+
+# EXCEPCIÓN: No ignorar el archivo .gitkeep
+!data/.gitkeep
