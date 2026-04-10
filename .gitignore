@@ -1,8 +1,8 @@
 # Ignorar todo el contenido de la carpeta data
 data/**/*
+data/raw/
 *.sav
 *.zip
-data/raw/
 
 # EXCEPCIÓN: No ignorar el archivo .gitkeep
 !data/.gitkeep
