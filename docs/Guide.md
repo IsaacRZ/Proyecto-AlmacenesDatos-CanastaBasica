@@ -14,7 +14,8 @@ conda create -n canasta-bigdata python=3.11
 conda activate canasta-bigdata
 
 # Install all dependencies
-pip install -r requirements.txt
+conda install pandas pyarrow scikit-learn xgboost matplotlib seaborn plotly jupyter openpyxl -y
+pip install pyreadstat psycopg2-binary sqlalchemy prophet shap duckdb python-dotenv
 
 # Register kernel for Jupyter
 python -m ipykernel install --user --name canasta-bigdata --display-name "Canasta BigData CR"
