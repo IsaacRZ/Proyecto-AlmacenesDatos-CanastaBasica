@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Principal | Proyecto Big Data</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>Dashboard Principal</h1>
+      <p>Visualización ejecutiva del costo de vida y presión económica</p>
+    </div>
+
+    <nav class="nav">
+      <a href="./index.html">Inicio</a>
+      <a href="./dashboard.html" class="active">Dashboard</a>
+      <a href="./tecnico.html">Técnico</a>
+      <a href="./acerca.html">Acerca de</a>
+    </nav>
+  </header>
+
+  <main class="dashboard-page">
+
+    <section class="kpi-section">
+      <div class="section-head">
+        <h2>KPIs principales</h2>
+        <p>Indicadores clave para entender la presión económica.</p>
+      </div>
+
+      <div class="grid grid-4">
+        <article class="kpi-card">
+          <span class="kpi-label">Ingreso promedio</span>
+          <h3 id="kpiIngresoPromedio">₡0</h3>
+          <p>Promedio por persona</p>
+        </article>
+
+        <article class="kpi-card">
+          <span class="kpi-label">Canasta básica</span>
+          <h3 id="kpiCanastaPromedio">₡0</h3>
+          <p>Costo promedio</p>
+        </article>
+
+        <article class="kpi-card">
+          <span class="kpi-label">% en comida</span>
+          <h3 id="kpiPorcentajeCba">0%</h3>
+          <p>Presión económica</p>
+        </article>
+
+        <article class="kpi-card">
+          <span class="kpi-label">Predicción futura</span>
+          <h3 id="kpiPrediccion">0%</h3>
+          <p>Estimación principal</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="charts-section">
+      <div class="section-head">
+        <h2>Análisis principal</h2>
+        
+      </div>
+
+      <div class="stack-charts">
+        <article class="chart-card chart-card--hero">
+          <div class="card-head">
+            <span class="chart-badge">Gráfico principal</span>
+            <h3>Ingreso vs Canasta Básica vs % destinado a comida</h3>
+            <p>Vista histórica principal del proyecto. Este bloque queda listo para mostrar las tres series en un solo gráfico cuando se ajuste el JavaScript.</p>
+          </div>
+
+          <div class="chart-toolbar">
+            <div class="filter-group">
+              <label for="filterChartIngresoAnio">Año del gráfico</label>
+              <select id="filterChartIngresoAnio">
+                <option value="todos">Todos</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="chart-kpis chart-kpis--3">
+            <article class="mini-kpi">
+              <span>Ingreso</span>
+              <strong id="kpiIngresoGrafico">₡0</strong>
+            </article>
+            <article class="mini-kpi">
+              <span>Canasta</span>
+              <strong id="kpiCanastaGrafico">₡0</strong>
+            </article>
+            <article class="mini-kpi">
+              <span>% comida</span>
+              <strong id="kpiPorcentajeGrafico">0%</strong>
+            </article>
+          </div>
+
+          <div class="chart-container chart-container--hero">
+            <canvas id="chartIngresoVsCanasta"></canvas>
+          </div>
+        </article>
+
+        <article class="chart-card chart-card--wide">
+          <div class="card-head">
+            <h3>% del ingreso destinado a la canasta básica por año y región</h3>
+            <p>Comparación histórica por región mediante barras agrupadas, con filtros interactivos para explorar la presión económica.</p>
+          </div>
+
+          <div class="chart-toolbar">
+            <div class="filter-group">
+              <label for="filterChartPorcentajeRegion">Región</label>
+              <select id="filterChartPorcentajeRegion">
+                <option value="todas">Todas</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="filterChartPorcentajeZona">Zona</label>
+              <select id="filterChartPorcentajeZona">
+                <option value="todas">Todas</option>
+                <option value="urbana">Urbana</option>
+                <option value="rural">Rural</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="chart-container chart-container--large">
+            <canvas id="chartPorcentajeHistorico"></canvas>
+          </div>
+        </article>
+
+        <article class="chart-card chart-card--wide">
+          <div class="card-head">
+            <h3>Desigualdad por nivel de ingreso</h3>
+            <p>Comparación del esfuerzo económico según nivel de ingreso, ahora con mayor espacio para lectura.</p>
+          </div>
+
+          <div class="chart-toolbar">
+            <div class="filter-group">
+              <label for="filterChartNivelAnio">Año</label>
+              <select id="filterChartNivelAnio">
+                <option value="todos">Todos</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="filterChartNivelZona">Zona</label>
+              <select id="filterChartNivelZona">
+                <option value="todas">Todas</option>
+                <option value="urbana">Urbana</option>
+                <option value="rural">Rural</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="chart-container chart-container--large">
+            <canvas id="chartPorNivelIngreso"></canvas>
+          </div>
+        </article>
+
+        <article class="chart-card chart-card--wide">
+          <div class="card-head">
+            <h3>Predicción del % del ingreso en canasta</h3>
+            <p>Tendencia futura del indicador de presión económica con más espacio para que la serie completa se vea mejor.</p>
+          </div>
+
+          <div class="chart-toolbar">
+            <div class="filter-group">
+              <label for="filterChartPrediccionPctVista">Vista</label>
+              <select id="filterChartPrediccionPctVista">
+                <option value="historico_prediccion">Histórico + predicción</option>
+                <option value="solo_prediccion">Solo predicción</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="chart-container chart-container--large">
+            <canvas id="chartPrediccionPorcentaje"></canvas>
+          </div>
+        </article>
+
+        <article class="chart-card chart-card--wide">
+          <div class="card-head">
+            <h3>Predicción de la canasta básica</h3>
+            <p>Estimación futura del costo de la canasta con formato más amplio para análisis visual.</p>
+          </div>
+
+          <div class="chart-container chart-container--large">
+            <canvas id="chartPrediccionCanasta"></canvas>
+          </div>
+        </article>
+
+        <article class="chart-card chart-card--wide">
+          <div class="card-head">
+            <h3>Variable externa: clima</h3>
+            <p>Análisis complementario para explorar relaciones con el costo de vida con mejor tamaño de lectura.</p>
+          </div>
+
+          <div class="chart-toolbar">
+            <div class="filter-group">
+              <label for="filterChartClimaRegion">Región</label>
+              <select id="filterChartClimaRegion">
+                <option value="todas">Todas</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="chart-container chart-container--large">
+            <canvas id="chartClima"></canvas>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="map-section">
+    <div class="section-head">
+      <h2>Mapa interactivo por región</h2>
+      <p>Top 3 regiones más afectadas en 2025 con vista interactiva.</p>
+    </div>
+
+    <div class="map-card">
+      <div id="mapRegion" class="map-container" style="height: 850px; border-radius: 20px; overflow: hidden; margin-bottom: 16px;"></div>
+
+      <div id="mapTopRegions" class="map-top-regions" style="display:flex; gap:12px; flex-wrap:wrap;"></div>
+    </div>
+</section>
+  </main> 
+
+  <footer class="footer">
+    <p>Dashboard Principal · Proyecto Big Data</p>
+  </footer>
+
+  <script src="../js/main.js?v=3"></script>
+  <script src="../js/utils.js?v=3"></script>
+  <script src="../js/filters.js?v=3"></script>
+  <script src="../js/charts.js?v=3"></script>
+  <script src="../js/map.js?v=4"></script>
+</body>
+</html>

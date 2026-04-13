@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Técnico | Proyecto Big Data</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>Dashboard Técnico</h1>
+      <p>Validación, métricas y análisis del modelo</p>
+    </div>
+
+    <nav class="nav">
+      <a href="./index.html">Inicio</a>
+      <a href="./dashboard.html">Dashboard</a>
+      <a href="./tecnico.html" class="active">Técnico</a>
+      <a href="./acerca.html">Acerca de</a>
+    </nav>
+  </header>
+
+  <main class="dashboard-page">
+    <section class="kpi-section">
+      <div class="section-head">
+        <h2>KPIs técnicos</h2>
+        <p>Indicadores que respaldan la calidad y desempeño del análisis predictivo.</p>
+      </div>
+
+      <div class="grid grid-4">
+        <article class="kpi-card">
+          <span class="kpi-label">RMSE</span>
+          <h3 id="kpiRmse">2.95</h3>
+          <p>Error promedio del modelo</p>
+        </article>
+
+        <article class="kpi-card">
+          <span class="kpi-label">Accuracy</span>
+          <h3 id="kpiAccuracy">0%</h3>
+          <p>Modelo ML</p>
+        </article>
+
+        <article class="kpi-card">
+          <span class="kpi-label">Precision</span>
+          <h3 id="kpiPrecision">0%</h3>
+          <p>Calidad predictiva</p>
+        </article>
+
+        <article class="kpi-card">
+          <span class="kpi-label">Recall</span>
+          <h3 id="kpiRecall">0%</h3>
+          <p>Sensibilidad del modelo</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="charts-section">
+      <div class="section-head">
+        <h2>Validación y explicabilidad</h2>
+        <p>Visualizaciones técnicas con mejor tamaño, lectura e interacción.</p>
+      </div>
+
+      <div class="stack-charts">
+        <article class="chart-card chart-card--hero">
+          <div class="card-head">
+            <span class="chart-badge">Validación principal</span>
+            <h3>Predicción vs valor real</h3>
+            <p>Comparación entre la salida del modelo y los datos observados en un bloque ampliado.</p>
+          </div>
+
+          <div class="chart-container chart-container--hero">
+            <canvas id="chartValidacionPrediccion"></canvas>
+          </div>
+        </article>
+
+        <article class="chart-card chart-card--wide">
+          <div class="card-head">
+            <h3>Métricas del modelo</h3>
+            <p>Resumen visual del comportamiento del modelo predictivo y de clasificación.</p>
+          </div>
+
+          <div class="chart-container chart-container--large">
+            <canvas id="chartMetricasModelo"></canvas>
+          </div>
+        </article>
+
+        <article class="chart-card chart-card--wide">
+          <div class="card-head">
+            <h3>Importancia de variables (SHAP)</h3>
+            <p>Variables con mayor impacto en la predicción de vulnerabilidad.</p>
+          </div>
+
+          <div class="chart-container chart-container--large">
+            <canvas id="chartShap"></canvas>
+          </div>
+        </article>
+
+        <article class="chart-card">
+          <div class="card-head">
+            <h3>Resumen técnico del modelo</h3>
+            <p>Descripción general del enfoque analítico aplicado.</p>
+          </div>
+
+          <div class="tech-summary tech-summary--wide" id="techSummary">
+            <div class="summary-item">
+              <h4>Modelo predictivo</h4>
+              <p>Prophet para predicción de canasta básica y del porcentaje del ingreso destinado a alimentos.</p>
+            </div>
+
+            <div class="summary-item">
+              <h4>Modelo de clasificación</h4>
+              <p>XGBoost para análisis de vulnerabilidad económica.</p>
+            </div>
+
+            <div class="summary-item">
+              <h4>Evaluación</h4>
+              <p>Uso de métricas técnicas y explicabilidad para respaldar los resultados.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Interpretación técnica</h2>
+        <p>Espacio para comentarios analíticos, hallazgos y conclusiones del modelo.</p>
+      </div>
+
+      <div class="card large-card large-card--insights">
+        <p id="technicalInsights">
+          Aquí se mostrarán conclusiones técnicas relacionadas con error del modelo, variables más relevantes,
+          comportamiento predictivo y consistencia general de los resultados.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Dashboard Técnico · Proyecto Big Data</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/charts.js"></script>
+  <script src="../js/utils.js"></script>
+</body>
+</html>

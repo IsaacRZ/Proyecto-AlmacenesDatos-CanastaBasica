@@ -1,0 +1,181 @@
+﻿anio,region,zona,porcentaje_ingreso_en_cba
+2011,Brunca,rural,68.0
+2012,Brunca,rural,77.71
+2013,Brunca,rural,73.94
+2014,Brunca,rural,70.16
+2015,Brunca,rural,66.38
+2016,Brunca,rural,64.62
+2017,Brunca,rural,62.85
+2018,Brunca,rural,61.09
+2019,Brunca,rural,52.48
+2020,Brunca,rural,43.87
+2021,Brunca,rural,54.41
+2022,Brunca,rural,53.77
+2023,Brunca,rural,50.12
+2024,Brunca,rural,55.79
+2025,Brunca,rural,46.96
+2011,Brunca,urbana,57.85
+2012,Brunca,urbana,49.52
+2013,Brunca,urbana,49.96
+2014,Brunca,urbana,50.4
+2015,Brunca,urbana,50.84
+2016,Brunca,urbana,50.47
+2017,Brunca,urbana,50.11
+2018,Brunca,urbana,49.75
+2019,Brunca,urbana,44.88
+2020,Brunca,urbana,40.02
+2021,Brunca,urbana,47.56
+2022,Brunca,urbana,47.02
+2023,Brunca,urbana,45.19
+2024,Brunca,urbana,42.45
+2025,Brunca,urbana,36.29
+2011,Central,rural,40.28
+2012,Central,rural,40.22
+2013,Central,rural,40.42
+2014,Central,rural,40.62
+2015,Central,rural,40.82
+2016,Central,rural,39.59
+2017,Central,rural,38.36
+2018,Central,rural,37.13
+2019,Central,rural,39.97
+2020,Central,rural,42.82
+2021,Central,rural,38.0
+2022,Central,rural,37.48
+2023,Central,rural,43.46
+2024,Central,rural,32.57
+2025,Central,rural,31.16
+2011,Central,urbana,33.51
+2012,Central,urbana,34.59
+2013,Central,urbana,36.07
+2014,Central,urbana,37.55
+2015,Central,urbana,39.02
+2016,Central,urbana,37.0
+2017,Central,urbana,34.98
+2018,Central,urbana,32.95
+2019,Central,urbana,35.6
+2020,Central,urbana,38.24
+2021,Central,urbana,34.18
+2022,Central,urbana,32.41
+2023,Central,urbana,33.32
+2024,Central,urbana,28.11
+2025,Central,urbana,24.98
+2011,Chorotega,rural,74.12
+2012,Chorotega,rural,65.33
+2013,Chorotega,rural,67.53
+2014,Chorotega,rural,69.73
+2015,Chorotega,rural,71.92
+2016,Chorotega,rural,65.28
+2017,Chorotega,rural,58.63
+2018,Chorotega,rural,51.98
+2019,Chorotega,rural,48.62
+2020,Chorotega,rural,45.25
+2021,Chorotega,rural,74.06
+2022,Chorotega,rural,53.13
+2023,Chorotega,rural,59.84
+2024,Chorotega,rural,46.33
+2025,Chorotega,rural,36.4
+2011,Chorotega,urbana,50.1
+2012,Chorotega,urbana,58.09
+2013,Chorotega,urbana,56.73
+2014,Chorotega,urbana,55.37
+2015,Chorotega,urbana,54.0
+2016,Chorotega,urbana,50.15
+2017,Chorotega,urbana,46.29
+2018,Chorotega,urbana,42.43
+2019,Chorotega,urbana,45.05
+2020,Chorotega,urbana,47.66
+2021,Chorotega,urbana,46.96
+2022,Chorotega,urbana,53.0
+2023,Chorotega,urbana,46.62
+2024,Chorotega,urbana,39.98
+2025,Chorotega,urbana,33.96
+2011,Huetar Atlántica,rural,57.21
+2012,Huetar Atlántica,rural,81.34
+2013,Huetar Atlántica,rural,71.95
+2014,Huetar Atlántica,rural,62.56
+2015,Huetar Atlántica,rural,53.16
+2016,Huetar Atlántica,rural,52.03
+2017,Huetar Atlántica,rural,50.9
+2018,Huetar Atlántica,rural,49.76
+2019,Huetar Atlántica,rural,51.6
+2020,Huetar Atlántica,rural,53.44
+2021,Huetar Atlántica,rural,56.55
+2022,Huetar Atlántica,rural,56.94
+2023,Huetar Atlántica,rural,59.84
+2024,Huetar Atlántica,rural,51.52
+2025,Huetar Atlántica,rural,46.6
+2011,Huetar Atlántica,urbana,50.45
+2012,Huetar Atlántica,urbana,62.06
+2013,Huetar Atlántica,urbana,60.61
+2014,Huetar Atlántica,urbana,59.17
+2015,Huetar Atlántica,urbana,57.73
+2016,Huetar Atlántica,urbana,56.83
+2017,Huetar Atlántica,urbana,55.93
+2018,Huetar Atlántica,urbana,55.03
+2019,Huetar Atlántica,urbana,55.25
+2020,Huetar Atlántica,urbana,55.47
+2021,Huetar Atlántica,urbana,61.47
+2022,Huetar Atlántica,urbana,53.98
+2023,Huetar Atlántica,urbana,64.16
+2024,Huetar Atlántica,urbana,63.61
+2025,Huetar Atlántica,urbana,48.78
+2011,Huetar Norte,rural,50.92
+2012,Huetar Norte,rural,52.21
+2013,Huetar Norte,rural,57.73
+2014,Huetar Norte,rural,63.24
+2015,Huetar Norte,rural,68.76
+2016,Huetar Norte,rural,64.55
+2017,Huetar Norte,rural,60.34
+2018,Huetar Norte,rural,56.13
+2019,Huetar Norte,rural,61.48
+2020,Huetar Norte,rural,66.83
+2021,Huetar Norte,rural,57.51
+2022,Huetar Norte,rural,59.52
+2023,Huetar Norte,rural,53.6
+2024,Huetar Norte,rural,44.61
+2025,Huetar Norte,rural,41.51
+2011,Huetar Norte,urbana,36.2
+2012,Huetar Norte,urbana,37.34
+2013,Huetar Norte,urbana,40.9
+2014,Huetar Norte,urbana,44.46
+2015,Huetar Norte,urbana,48.02
+2016,Huetar Norte,urbana,47.7
+2017,Huetar Norte,urbana,47.37
+2018,Huetar Norte,urbana,47.04
+2019,Huetar Norte,urbana,46.76
+2020,Huetar Norte,urbana,46.47
+2021,Huetar Norte,urbana,49.6
+2022,Huetar Norte,urbana,57.26
+2023,Huetar Norte,urbana,48.07
+2024,Huetar Norte,urbana,43.54
+2025,Huetar Norte,urbana,33.05
+2011,Pacífico Central,rural,49.45
+2012,Pacífico Central,rural,45.47
+2013,Pacífico Central,rural,44.95
+2014,Pacífico Central,rural,44.43
+2015,Pacífico Central,rural,43.92
+2016,Pacífico Central,rural,43.12
+2017,Pacífico Central,rural,42.33
+2018,Pacífico Central,rural,41.53
+2019,Pacífico Central,rural,49.88
+2020,Pacífico Central,rural,58.23
+2021,Pacífico Central,rural,45.7
+2022,Pacífico Central,rural,44.04
+2023,Pacífico Central,rural,37.87
+2024,Pacífico Central,rural,34.96
+2025,Pacífico Central,rural,36.53
+2011,Pacífico Central,urbana,48.54
+2012,Pacífico Central,urbana,46.4
+2013,Pacífico Central,urbana,51.57
+2014,Pacífico Central,urbana,56.74
+2015,Pacífico Central,urbana,61.91
+2016,Pacífico Central,urbana,57.37
+2017,Pacífico Central,urbana,52.84
+2018,Pacífico Central,urbana,48.31
+2019,Pacífico Central,urbana,57.81
+2020,Pacífico Central,urbana,67.32
+2021,Pacífico Central,urbana,52.88
+2022,Pacífico Central,urbana,69.4
+2023,Pacífico Central,urbana,52.93
+2024,Pacífico Central,urbana,44.41
+2025,Pacífico Central,urbana,36.79

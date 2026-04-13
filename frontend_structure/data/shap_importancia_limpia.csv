@@ -1,0 +1,13 @@
+feature,shap_medio
+ingreso_percapita_bruto,8.152809
+ingreso_hogar_bruto,1.2257296
+valor_cba,0.8630888
+zona,0.6605526
+tam_hogar,0.43801323
+anio,0.2771933
+edad,0.1639439
+nivel_instruccion,0.12634629
+pobreza_multidimensional,0.058079146
+condicion_actividad,0.045414664
+region,0.044534337
+sexo,0.029729849

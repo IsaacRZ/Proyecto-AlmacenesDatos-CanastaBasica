@@ -1,0 +1,16 @@
+feature,shap_medio
+ingreso_percapita_bruto,7.0260158
+decil_ingreso,2.6682658
+linea_pobreza,0.6834647
+quintil_ingreso,0.6220145
+zona,0.57805556
+valor_cba,0.47764087
+ingreso_hogar_bruto,0.45428672
+anio,0.17043085
+edad,0.12070585
+tam_hogar,0.1098237
+pobreza_multidimensional,0.10310058
+nivel_instruccion,0.075742334
+region,0.042358205
+condicion_actividad,0.020850105
+sexo,0.014843228
