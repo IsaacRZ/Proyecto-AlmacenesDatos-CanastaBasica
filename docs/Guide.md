@@ -14,8 +14,7 @@ conda create -n canasta-bigdata python=3.11
 conda activate canasta-bigdata
 
 # Install all dependencies
-conda install pandas pyarrow scikit-learn xgboost matplotlib seaborn plotly jupyter openpyxl -y
-pip install pyreadstat psycopg2-binary sqlalchemy prophet shap duckdb python-dotenv
+pip install -r requirements.txt
 
 # Register kernel for Jupyter
 python -m ipykernel install --user --name canasta-bigdata --display-name "Canasta BigData CR"
@@ -34,7 +33,16 @@ canasta-basica-cr/
 ├── etl/
 │   ├── 01_eda.ipynb   # Exploratory data analysis
 │   └── 01tel.ipynb    # ENAHO consolidation & cleaning
-├── ml/                # Predictive models (Prophet, XGBoost+SHAP)
+├── models/
+│   ├── 01tel.ipynb    # Model development notebook
+│   └── README.md      # Model documentation
+├── frontend_structure/
+│   ├── views/         # HTML views (index, dashboard, acerca, tecnico)
+│   ├── assets/        # Static assets (icons, images)
+│   ├── css/           # Stylesheets
+│   ├── js/            # JavaScript files
+│   ├── libs/          # External libraries
+│   └── data/          # Frontend data files
 ├── database/          # SQL scripts & analytical queries
 ├── dashboard/         # Visualizations & dashboards
 ├── docs/              # Project documentation
@@ -55,8 +63,9 @@ data/warehouse/ →  ml/               →  predicciones/
 
 | Source | Files | Rows | Description |
 |--------|-------|------|-------------|
-| ENAHO | 11 `.sav` files (2010-2025) | 373,843 | National Household Survey |
-| ENIGH | 3 `.sav` files (2024) | 177,972 | Income and Expenditure Survey |
+| ENAHO | 11 `.sav` files (2010-2025) | 373,843 | National Household Survey (persona level) |
+| ENIGH | 3 `.sav` files (2024) | 177,972 | Income and Expenditure Survey (gasto_hogar) |
+| **Total DW** | — | **5,411,856** | Including fact_crossjoin table |
 
 ### Key Variables
 
@@ -78,11 +87,34 @@ The `fact_crossjoin` table joins each ENAHO person with 13 CCIF expenditure divi
 
 **Prophet (CBA Forecast):**
 - MAPE: 14.0% | RMSE: ₡8,494
-- 2026 forecast: ₡60,740 (95% CI: 57,857-63,897)
+- Forecast 2026-2030:
+
+| Año | CBA predicha (₡) | Intervalo 95% |
+|-----|-----------------|---------------|
+| 2026 | 60,740 | 57,857–63,897 |
+| 2027 | 62,830 | 59,903–65,726 |
+| 2028 | 64,920 | 62,226–67,946 |
+| 2029 | 67,015 | 63,835–70,110 |
+| 2030 | 69,105 | 65,927–72,546 |
+
+**Changepoints detected:**
+- 2015: INEC methodology change (new basket) → +15.8%
+- 2020: COVID-19 pandemic → -0.3% (consumption drop)
+- 2022: Post-pandemic inflation → +16.6% (historical maximum)
 
 **XGBoost+SHAP (Vulnerability):**
-- ROC-AUC: 0.9998 | F1 vulnerable: 0.98
+- ROC-AUC: 0.9998 | Accuracy: 99% | F1 vulnerable: 0.98
 - High ROC-AUC expected: INEC defines poverty as `ingreso_percapita < linea_pobreza`
+
+**Top 5 variables by SHAP importance:**
+
+| Variable | SHAP Impact | Interpretation |
+|----------|-------------|----------------|
+| ingreso_percapita_bruto | 8.31 | Main determinant factor |
+| ingreso_hogar_bruto | 1.15 | Household size effect on total income |
+| valor_cba | 0.93 | Higher CBA increases pressure on vulnerable households |
+| zona (urbano/rural) | 0.69 | Rural zone increases vulnerability risk |
+| tam_hogar | 0.43 | Larger households have higher exposure |
 
 ## Key Technical Decisions
 
@@ -92,23 +124,40 @@ The `fact_crossjoin` table joins each ENAHO person with 13 CCIF expenditure divi
 
 3. **Crossjoin assumption:** ENIGH 2024 expenditure structure assumed constant across years.
 
+## Limitations
+
+1. **Prophet series with 11 points:** Years 2013, 2014, 2016, 2017, 2019 have no ENAHO data. Gaps reduce temporal precision.
+
+2. **ENIGH single year (2024):** Crossjoin assumes expenditure structure doesn't change across years—a simplification.
+
+3. **MAPE 14%:** Acceptable for short annual series but insufficient for public policy decisions without monthly IPC series.
+
+4. **Data until 2025:** INEC publishes ENAHO with ~6 months lag.
+
 ## Common Operations
 
 ```bash
+# Activate conda environment
+conda activate canasta-bigdata
+
 # Run ETL notebooks
 jupyter notebook etl/01_eda.ipynb
 jupyter notebook etl/01tel.ipynb
 
-# Process ENAHO data
-# Requires pyarrow for Parquet output
+# Run model development
+jupyter notebook models/01tel.ipynb
+
+# Install dependencies
+pip install -r requirements.txt
 ```
 
 ## Technologies
 
-| Layer | Technology |
-|-------|------------|
-| SPSS ingestion | pyreadstat |
-| Processing | Pandas + PySpark |
-| Storage | Parquet + DuckDB |
-| Time series | Prophet |
-| Classification | XGBoost + SHAP |
+| Layer | Technology | Justification |
+|-------|------------|---------------|
+| SPSS ingestion | pyreadstat | Native SPSS (.sav) reader for Python |
+| Processing | Pandas + PySpark | Pandas for ETL, PySpark for DW >1M rows |
+| Storage | Parquet + DuckDB | Columnar, compressed, fast SQL queries |
+| Time series | Prophet (Meta) | Native handling of gaps, changepoints, regressors |
+| Classification | XGBoost | Best performance on structured tabular data |
+| Explainability | SHAP | Local and global model interpretation |
